@@ -1,5 +1,5 @@
 
-This page explains how to launch the experiments designed described in **Automated Equivalence of Linear Programs by Permutation and Scaling: Problem Definition and Exact Methods**.
+This page explains how to launch the experiments designed described in [!Automated Equivalence of Linear Programs by Permutation and Scaling: Problem Definition and Exact Methods].
 
   
 
@@ -16,45 +16,45 @@ The instances are in **scipy** `.npz` files classified in four categories of lin
    - The dataset for equivalence is inside the directory `dataset/netlib/lp/lp_npz2/lp_equal_matrices`
 
 		> An example of instance is the **afiro** instance with the two **scipy**  `.npz` matrices:
-          >>  `afiro_A1_eq.npz` and `afiro_B1_eq.npz`
+        `afiro_A1_eq.npz` and `afiro_B1_eq.npz`
 
     -  The dataset for non-equivalence is inside the directory `dataset/netlib/lp/lp_npz2/lp_not_equal_matrices`
 
 		> An example of instance is the **afiro** instance with the two **scipy**  `.npz` matrices:
-          >>  `afiro_A1_not_eq.npz` and `afiro_B1_not_eq.npz`
+        `afiro_A1_not_eq.npz` and `afiro_B1_not_eq.npz`
 
 -  **linear fitting** problems:
    - The dataset for equivalence is inside the directory `dataset/linear_fitting/linear/linear_npz/linear_equal_matrices`
 
 		> An example of instance is the **Mat_linear3** instance with the two **scipy**`.npz` matrices:
-           >>  `Mat_linear3_A3_eq.npz` and `Mat_linear3_B3_eq.npz`
+        `Mat_linear3_A3_eq.npz` and `Mat_linear3_B3_eq.npz`
 
     - The dataset for non-equivalence is inside the directory `dataset/linear_fitting/linear/linear_npz/linear_not_equal_matrices`
 
 		> An example of instance is the **Mat_linear3** instance with the two **scipy**  `.npz` matrices:
-           >>  `Mat_linear3_A3_not_eq.npz` and `Mat_linear3_B3_not_eq.npz`
+        `Mat_linear3_A3_not_eq.npz` and `Mat_linear3_B3_not_eq.npz`
   
 -  **polynomial fitting** problems:
     - The dataset for equivalence is inside the directory `dataset/polynomial_fitting/polynomial/polynomial_npz/polynomial_equal_matrices`
 
 		> An example of instance is the **Mat_polynomial3** instance with the two **scipy**  `.npz` matrices:
-          >>  `Mat_polynomial3_A3_eq.npz` and `Mat_polynomial3_B3_eq.npz`
+        `Mat_polynomial3_A3_eq.npz` and `Mat_polynomial3_B3_eq.npz`
 
     - The dataset for non-equivalence is inside the directory `dataset/polynomial_fitting/polynomial/polynomial_npz/polynomial_not_equal_matrices`
 
 		> An example of instance is the **Mat_polynomial3** instance with the two **scipy**  `.npz` matrices:
-           >>  `Mat_polynomial3_A3_not_eq.npz` and `Mat_polynomial3_B3_not_eq.npz`
+         `Mat_polynomial3_A3_not_eq.npz` and `Mat_polynomial3_B3_not_eq.npz`
 
 -  **fractional multidimensional knapsack** problems:
     - The dataset for equivalence is inside the directory `dataset/fractional_multidim_knapsack/knapsack/knapsack_npz/knapsack_equal_matrices`
 
 		> An example of instance is the **Mat_knapsack3** instance with the two **scipy**  `.npz` matrices:
-       >> `Mat_knapsack3_A3_eq.npz` and `Mat_knapsack3_B3_eq.npz`
+       `Mat_knapsack3_A3_eq.npz` and `Mat_knapsack3_B3_eq.npz`
 
     - The dataset for non-equivalence is inside the directory `dataset/fractional_multidim_knapsack/knapsack/knapsack_npz/knapsack_not_equal_matrices`
 
 		> An example of instance is the **Mat_knapsack3** instance with the two **scipy**  `.npz` matrices:
-           >>` Mat_knapsack3_A3_not_eq.npz` and `Mat_knapsack3_B3_not_eq.npz`
+        ` Mat_knapsack3_A3_not_eq.npz` and `Mat_knapsack3_B3_not_eq.npz`
 
   
 
