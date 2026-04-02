@@ -95,9 +95,9 @@ The instances are in **scipy** `.npz` files classified in four categories of lin
   
 
 Make sure you have the required dependencies (or equivalent):
-- **C++, CMake 4.0, Eigen**
-- **Python 3.11.9, pandas, scipy, gurobipy, numpy**
-- **MiniZincIDE 2.9.3** with the solvers **Gecode, Or-Tools, Chuffed, Coinbc** available at https://www.minizinc.org/downloads/
+- [C++](https://cplusplus.com), [CMake 4.0](https://cmake.org/cmake/help/latest/release/4.0.html), [Eigen](https://libeigen.gitlab.io)
+- [Python 3.11.9](https://www.python.org/downloads/release/python-3119/), [pandas](https://pandas.pydata.org), [scipy](https://scipy.org), [gurobipy](https://pypi.org/project/gurobipy/), [numpy](https://numpy.org)
+- [MiniZincIDE 2.9.3](https://www.minizinc.org/downloads/) with the solvers **Gecode, Or-Tools, Chuffed, Coinbc** integrated
 
 Then, download the source code and the dataset at https://github.com/JovialCheukam/linearprogequiv2026_code
 
