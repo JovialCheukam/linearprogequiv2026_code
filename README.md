@@ -1,5 +1,5 @@
 
-This page explains how to launch the experiments designed described in [!Automated Equivalence of Linear Programs by Permutation and Scaling: Problem Definition and Exact Methods].
+This page explains how to launch the experiments designed described in **Automated Equivalence of Linear Programs by Permutation and Scaling: Problem Definition and Exact Methods**.
 
   
 
@@ -96,55 +96,55 @@ The algorithmic procedures are **Algo**, **AlgoEnhanced** and **Luby** methods. 
 - Execute the build command `cmake --build .`
 - Execute the equivalence checking command `./EquivLinProg ` with the following parameters (in order):
 
-	> Type of algorithm : `algo` or `algo_enhanced`
+	- Type of algorithm : `algo` or `algo_enhanced`
 
-	> Timeout in minutes : a positif integer
+	- Timeout in minutes : a positif integer
 
-	> Type of instance :
-        >> If it is the search of equivalence : `eq`
-        >> If it is the search of non-equivalence : `not_eq`
+	- Type of instance :
+        1. If it is the search of equivalence : `eq`
+        2. If it is the search of non-equivalence : `not_eq`
 
-	> The site web directory :
-       >> For the network flow problem, the site web directory is `netlib/`
-       >> For the linear fitting problem, the site web directory is `linear_fitting/`
-       >> For the polynomial fitting problem, the site web directory is `polynomial_fitting/`
-      >> For the knapsack problem, the site web directory is `fractional_multidim_knapsack/`
+	- The site web directory :
+       1. For the network flow problem, the site web directory is `netlib/`
+       2. For the linear fitting problem, the site web directory is `linear_fitting/`
+       3. For the polynomial fitting problem, the site web directory is `polynomial_fitting/`
+       4. For the knapsack problem, the site web directory is `fractional_multidim_knapsack/`
 
-	> The problem directory :
-      >> For the network flow problem, the problem directory is `lp`
-      >> For the linear fitting problem, the problem directory is `linear`
-      >> For the polynomial fitting problem, the problem directory is `polynomial`
-      >> For the knapsack problem, the problem directory is `knapsack`
+	- The problem directory :
+      1. For the network flow problem, the problem directory is `lp`
+      2. For the linear fitting problem, the problem directory is `linear`
+      3. For the polynomial fitting problem, the problem directory is `polynomial`
+      4. For the knapsack problem, the problem directory is `knapsack`
 
-	> The instances directory :
-       >> For the network flow problem, the instances directory is `lp_npz2/`
-       >> For the linear fitting problem, the instances directory is `linear_npz/`
-       >> For the polynomial fitting problem, the instances directory is `polynomial_npz/`
-      >> For the knapsack problem, the instances directory is `knapsack_npz/`
+	- The instances directory :
+       1. For the network flow problem, the instances directory is `lp_npz2/`
+       2. For the linear fitting problem, the instances directory is `linear_npz/`
+       3. For the polynomial fitting problem, the instances directory is `polynomial_npz/`
+       4. For the knapsack problem, the instances directory is `knapsack_npz/`
 
-	> The name of the instance :
-       >> For the network flow problem, an example of name of an intance is `afiro`
-       >> For the linear fitting problem, an example of name of an intance is `Mat_linear3`
-      >> For the polynomial fitting problem, an example of name of an intance is `Mat_polynomial3`
-     >> For the knapsack problem, an example of name of an intance is `Mat_knapsack4`
+	- The name of the instance :
+       1. For the network flow problem, an example of name of an intance is `afiro`
+       2. For the linear fitting problem, an example of name of an intance is `Mat_linear3`
+       3. For the polynomial fitting problem, an example of name of an intance is `Mat_polynomial3`
+       4. For the knapsack problem, an example of name of an intance is `Mat_knapsack4`
 
-	> The multiplicative constante of Luby : an integer
-        >> If it is the Luby algorithm method used, the first parameter which is the the type of algorithm should be `algo_enhanced`.
-        >> If it it is not the Luby algorithm method used, the multiplicative constante of Luby is 0
+	- The multiplicative constante of Luby : an integer
+        1. If it is the Luby algorithm method used, the first parameter which is the the type of algorithm should be `algo_enhanced`.
+        2. If it it is not the Luby algorithm method used, the multiplicative constante of Luby is 0
 
-	> The random seed for the Luby method : an integer
-       >> If it it is not the Luby algorithm method used, any integer is correct
+	- The random seed for the Luby method : an integer
+       1. If it it is not the Luby algorithm method used, any integer is correct
 
-	> The flag value if it is a Luby method or not :
-       >> If it is a Luby method the parameter is `luby`
-       >> If it is not a Luby method the parameter is `not_luby`
+	- The flag value if it is a Luby method or not :
+       1. If it is a Luby method the parameter is `luby`
+       2. If it is not a Luby method the parameter is `not_luby`
 
   
 
 Here are example of complete commands:
-> `./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 0 9 not_luby`
-> `./EquivLinProg algo 2880 eq netlib/ lp lp_npz2/ adlittle 0 9 not_luby`
->	 `./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 1024 9 luby`
+ ```./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 0 9 not_luby
+    ./EquivLinProg algo 2880 eq netlib/ lp lp_npz2/ adlittle 0 9 not_luby
+    ./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 1024 9 luby ```
 
   
 ### Declarative methods
