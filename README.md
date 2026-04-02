@@ -142,9 +142,13 @@ The algorithmic procedures are **Algo**, **AlgoEnhanced** and **Luby** methods. 
   
 
 Here are example of complete commands:
- ```./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 0 9 not_luby
-    ./EquivLinProg algo 2880 eq netlib/ lp lp_npz2/ adlittle 0 9 not_luby
-    ./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 1024 9 luby ```
+ ```
+./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 0 9 not_luby
+
+./EquivLinProg algo 2880 eq netlib/ lp lp_npz2/ adlittle 0 9 not_luby
+
+./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 1024 9 luby
+```
 
   
 ### Declarative methods
@@ -155,42 +159,45 @@ The declarative methods use two constraints programming models named **TheoMod**
 - In `model_mat_permut.py`, replace the string **< MiniZinc Directory >** by the absolute path to the directory where **MiniZinc** is installed
 - Execute the equivalence checking command `python3 run_one_thread.py ` with the following parameters (in order):
 
-	> The type of method :
-       >> If the method is **TheoMod**, the parameter is `theorem_model`
-       >> If the method is **QuadraMod**, the parameter is `quadratic_model`
+	- The type of method :
+       1. If the method is **TheoMod**, the parameter is `theorem_model`
+       2. If the method is **QuadraMod**, the parameter is `quadratic_model`
 
-	> The solver used among the four availables and which are : `cp-sat`, `chuffed`, `gecode` and `coinbc`
+	- The solver used among the four availables and which are : `cp-sat`, `chuffed`, `gecode` and `coinbc`
 
-	> The maximum scale of rows of the matrices of the linear program of the instance : a positif integer
+	- The maximum scale of rows of the matrices of the linear program of the instance : a positif integer
 
-	> Timeout in minutes : a positif integer
+	- Timeout in minutes : a positif integer
 
-	> Type of instance : 
-	 >> If it is the search of equivalence, the parameter is `eq`
-     >> If it is the search of non-equivalence, the parameter is `not_eq`
+	- Type of instance : 
+	   1. If it is the search of equivalence, the parameter is `eq`
+       2. If it is the search of non-equivalence, the parameter is `not_eq`
 
-	> The problem directory :
-      >> For the network flow problem, the problem directory is `lp`
-      >> For the linear fitting problem, the problem directory is `linear`
-      >> For the polynomial fitting problem, the problem directory is `polynomial`
-      >> For the knapsack problem, the problem directory is `knapsack`
+	- The problem directory :
+       1. For the network flow problem, the problem directory is `lp`
+       2. For the linear fitting problem, the problem directory is `linear`
+       3. For the polynomial fitting problem, the problem directory is `polynomial`
+       4. For the knapsack problem, the problem directory is `knapsack`
 
-	> The instances directory :
-       >> For the network flow problem, the instances directory is `lp_npz2/`
-       >> For the linear fitting problem, the instances directory is `linear_npz/`
-       >> For the polynomial fitting problem, the instances directory is `polynomial_npz/`
-      >> For the knapsack problem, the instances directory is `knapsack_npz/`
+	- The instances directory :
+       1. For the network flow problem, the instances directory is `lp_npz2/`
+       2. For the linear fitting problem, the instances directory is `linear_npz/`
+       3. For the polynomial fitting problem, the instances directory is `polynomial_npz/`
+       4. For the knapsack problem, the instances directory is `knapsack_npz/`
 
-	> The name of the instance :
-       >> For the network flow problem, an example of name of an intance is `afiro`
-      >> For the linear fitting problem, an example of name of an intance is `Mat_linear3`
-      >> For the polynomial fitting problem, an example of name of an intance is `Mat_polynomial3`
-     >> For the knapsack problem, an example of name of an intance is `Mat_knapsack4`
+	- The name of the instance :
+       1. For the network flow problem, an example of name of an intance is `afiro`
+       2. For the linear fitting problem, an example of name of an intance is `Mat_linear3`
+       3. For the polynomial fitting problem, an example of name of an intance is `Mat_polynomial3`
+       4. For the knapsack problem, an example of name of an intance is `Mat_knapsack4`
 
-	> The ID number of the instance : an arbitrary integer
+	- The ID number of the instance : an arbitrary integer
 
 Here are examples of complete commands:
-> `python3 run_one_thread.py quadratic_model cp-sat 1 30 eq linear linear_npz/ Mat_linear3 1`
-> 	`python3 run_one_thread.py theorem_model chuffed 1 30 not_eq knapsack knapsack_npz/ Mat_knapsack3 1`
+```
+python3 run_one_thread.py quadratic_model cp-sat 1 30 eq linear linear_npz/ Mat_linear3 1
+
+python3 run_one_thread.py theorem_model chuffed 1 30 not_eq knapsack knapsack_npz/ Mat_knapsack3 1
+```
 
 The results of the test are recorded as a `.pickle` file in the above directory of the dataset.
