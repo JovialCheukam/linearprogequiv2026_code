@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README.md</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>This page explains how to launch the experiments designed described in <strong>Automated Equivalence of Linear Programs by Permutation and Scaling: Problem Definition and Exact Methods</strong>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Each problem instance consists in checking the equivalence or the non-equivalence of two linear programs with the same number of variables and constraints. The two linear programs are represented by two matrices, a ground truth matrix and a testing matrix, where the coefficients of the first rows belong to the objective function and the coefficients of remaining rows belong to the constraints. Each instance is dubbed by a name in source code and is classified in a specific directory depending on whether the linear problems are equivalent or not.</p>
+<p>The instances are in <strong>scipy</strong> <code>.npz</code> files classified in four categories of linear problems:</p>
+<ul>
+<li>
+<p><strong>network flow</strong> problems:</p>
+<ul>
+<li>
+<p>The dataset for equivalence is inside the directory <code>dataset/netlib/lp/lp_npz2/lp_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>afiro</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>afiro_A1_eq.npz</code> and <code>afiro_B1_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>The dataset for non-equivalence is inside the directory <code>dataset/netlib/lp/lp_npz2/lp_not_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>afiro</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>afiro_A1_not_eq.npz</code> and <code>afiro_B1_not_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>linear fitting</strong> problems:</p>
+<ul>
+<li>
+<p>The dataset for equivalence is inside the directory <code>dataset/linear_fitting/linear/linear_npz/linear_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>Mat_linear3</strong> instance with the two <strong>scipy</strong><code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>Mat_linear3_A3_eq.npz</code> and <code>Mat_linear3_B3_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>The dataset for non-equivalence is inside the directory <code>dataset/linear_fitting/linear/linear_npz/linear_not_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>Mat_linear3</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>Mat_linear3_A3_not_eq.npz</code> and <code>Mat_linear3_B3_not_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>polynomial fitting</strong> problems:</p>
+<ul>
+<li>
+<p>The dataset for equivalence is inside the directory <code>dataset/polynomial_fitting/polynomial/polynomial_npz/polynomial_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>Mat_polynomial3</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>Mat_polynomial3_A3_eq.npz</code> and <code>Mat_polynomial3_B3_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>The dataset for non-equivalence is inside the directory <code>dataset/polynomial_fitting/polynomial/polynomial_npz/polynomial_not_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>Mat_polynomial3</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>Mat_polynomial3_A3_not_eq.npz</code> and <code>Mat_polynomial3_B3_not_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>fractional multidimensional knapsack</strong> problems:</p>
+<ul>
+<li>
+<p>The dataset for equivalence is inside the directory <code>dataset/fractional_multidim_knapsack/knapsack/knapsack_npz/knapsack_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>Mat_knapsack3</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>Mat_knapsack3_A3_eq.npz</code> and <code>Mat_knapsack3_B3_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>The dataset for non-equivalence is inside the directory <code>dataset/fractional_multidim_knapsack/knapsack/knapsack_npz/knapsack_not_equal_matrices</code></p>
+<blockquote>
+<p>An example of instance is the <strong>Mat_knapsack3</strong> instance with the two <strong>scipy</strong>  <code>.npz</code> matrices:</p>
+<blockquote>
+<p><code>Mat_knapsack3_A3_not_eq.npz</code> and <code>Mat_knapsack3_B3_not_eq.npz</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-get-the-source-code-and-the-dataset">How to get the source code and the dataset?</h2>
+<p>Make sure you have the required dependencies (or equivalent):</p>
+<ul>
+<li><strong>C++, CMake 4.0, Eigen</strong></li>
+<li><strong>Python 3.11.9, pandas, scipy, gurobipy, numpy</strong></li>
+<li><strong>MiniZincIDE 2.9.3</strong> with the solvers <strong>Gecode, Or-Tools, Chuffed, Coinbc</strong> available at <a href="https://www.minizinc.org/downloads/">https://www.minizinc.org/downloads/</a></li>
+</ul>
+<p>Then, download the source code and the dataset at <a href="https://github.com/JovialCheukam/linearprogequiv2026_code">https://github.com/JovialCheukam/linearprogequiv2026_code</a></p>
+<p>The download should contain the two folders:</p>
+<ul>
+<li><code>equivalence_linear_program_algo</code></li>
+<li><code>equivalence_linear_program_model</code></li>
+</ul>
+<h2 id="how-to-use-the-source-code-and-the-commands-to-check-equivalence-between-two-linear-programs-from-the-dataset">How to use the source code and the commands to check equivalence between two linear programs from the dataset?</h2>
+<p>To check equivalence between two linear programs, there ae two types of commands:</p>
+<ol>
+<li>the command to use algorithmic procedures</li>
+<li>the command to use declarative methods</li>
+</ol>
+<h3 id="algorithmic-procedure">Algorithmic procedure</h3>
+<p>The algorithmic procedures are <strong>Algo</strong>, <strong>AlgoEnhanced</strong> and <strong>Luby</strong> methods. To run them:</p>
+<ul>
+<li>
+<p>Open a <strong>Terminal</strong></p>
+</li>
+<li>
+<p>Set the current directory to <code>equivalence_linear_program_algo/EquivLinProg</code> which contains the <code>CMakeLists.txt</code> file.</p>
+</li>
+<li>
+<p>In <code>CMakeLists.txt</code>, replace the string <strong>&lt; Home Directory &gt;</strong> by your own home directory (or the directory where the code was extracted).</p>
+</li>
+<li>
+<p>Set the current directory to <code>equivalence_linear_program_algo/EquivLinProg/build</code></p>
+</li>
+<li>
+<p>Excute the configuration command <code>cmake ..</code></p>
+</li>
+<li>
+<p>Execute the build command <code>cmake --build .</code></p>
+</li>
+<li>
+<p>Execute the equivalence checking command <code>./EquivLinProg</code> with the following parameters (in order):</p>
+<blockquote>
+<p>Type of algorithm : <code>algo</code> or <code>algo_enhanced</code></p>
+</blockquote>
+<blockquote>
+<p>Timeout in minutes : a positif integer</p>
+</blockquote>
+<blockquote>
+<p>Type of instance :</p>
+<blockquote>
+<p>If it is the search of equivalence : <code>eq</code><br>
+If it is the search of non-equivalence : <code>not_eq</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The site web directory :</p>
+<blockquote>
+<p>For the network flow problem, the site web directory is <code>netlib/</code><br>
+For the linear fitting problem, the site web directory is <code>linear_fitting/</code><br>
+For the polynomial fitting problem, the site web directory is <code>polynomial_fitting/</code><br>
+For the knapsack problem, the site web directory is <code>fractional_multidim_knapsack/</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The problem directory :</p>
+<blockquote>
+<p>For the network flow problem, the problem directory is <code>lp</code><br>
+For the linear fitting problem, the problem directory is <code>linear</code><br>
+For the polynomial fitting problem, the problem directory is <code>polynomial</code><br>
+For the knapsack problem, the problem directory is <code>knapsack</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The instances directory :</p>
+<blockquote>
+<p>For the network flow problem, the instances directory is <code>lp_npz2/</code><br>
+For the linear fitting problem, the instances directory is <code>linear_npz/</code><br>
+For the polynomial fitting problem, the instances directory is <code>polynomial_npz/</code><br>
+For the knapsack problem, the instances directory is <code>knapsack_npz/</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The name of the instance :</p>
+<blockquote>
+<p>For the network flow problem, an example of name of an intance is <code>afiro</code><br>
+For the linear fitting problem, an example of name of an intance is <code>Mat_linear3</code><br>
+For the polynomial fitting problem, an example of name of an intance is <code>Mat_polynomial3</code><br>
+For the knapsack problem, an example of name of an intance is <code>Mat_knapsack4</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The multiplicative constante of Luby : an integer</p>
+<blockquote>
+<p>If it is the Luby algorithm method used, the first parameter which is the the type of algorithm should be <code>algo_enhanced</code>.<br>
+If it it is not the Luby algorithm method used, the multiplicative constante of Luby is 0</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The random seed for the Luby method : an integer</p>
+<blockquote>
+<p>If it it is not the Luby algorithm method used, any integer is correct</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The flag value if it is a Luby method or not :</p>
+<blockquote>
+<p>If it is a Luby method the parameter is <code>luby</code><br>
+If it is not a Luby method the parameter is <code>not_luby</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>Here are example of complete commands:</p>
+<blockquote>
+<p><code>./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 0 9 not_luby</code><br>
+<code>./EquivLinProg algo 2880 eq netlib/ lp lp_npz2/ adlittle 0 9 not_luby</code><br>
+<code>./EquivLinProg algo_enhanced 2880 eq netlib/ lp lp_npz2/ afiro 1024 9 luby</code></p>
+</blockquote>
+<h3 id="declarative-methods">Declarative methods</h3>
+<p>The declarative methods use two constraints programming models named <strong>TheoMod</strong> and <strong>QuadraMod</strong>. To run a suitable solver on these models, proceed as follows:</p>
+<ul>
+<li>
+<p>Set the current directory to <code>equivalence_linear_program_model</code></p>
+</li>
+<li>
+<p>In <code>model_mat_permut.py</code>, replace the string <strong>&lt; MiniZinc Directory &gt;</strong> by the absolute path to the directory where <strong>MiniZinc</strong> is installed</p>
+</li>
+<li>
+<p>Execute the equivalence checking command <code>python3 run_one_thread.py</code> with the following parameters (in order):</p>
+<blockquote>
+<p>The type of method :</p>
+<blockquote>
+<p>If the method is <strong>TheoMod</strong>, the parameter is <code>theorem_model</code><br>
+If the method is <strong>QuadraMod</strong>, the parameter is <code>quadratic_model</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The solver used among the four availables and which are : <code>cp-sat</code>, <code>chuffed</code>, <code>gecode</code> and <code>coinbc</code></p>
+</blockquote>
+<blockquote>
+<p>The maximum scale of rows of the matrices of the linear program of the instance : a positif integer</p>
+</blockquote>
+<blockquote>
+<p>Timeout in minutes : a positif integer</p>
+</blockquote>
+<blockquote>
+<p>Type of instance :</p>
+<blockquote>
+<p>If it is the search of equivalence, the parameter is <code>eq</code><br>
+If it is the search of non-equivalence, the parameter is <code>not_eq</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The problem directory :</p>
+<blockquote>
+<p>For the network flow problem, the problem directory is <code>lp</code><br>
+For the linear fitting problem, the problem directory is <code>linear</code><br>
+For the polynomial fitting problem, the problem directory is <code>polynomial</code><br>
+For the knapsack problem, the problem directory is <code>knapsack</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The instances directory :</p>
+<blockquote>
+<p>For the network flow problem, the instances directory is <code>lp_npz2/</code><br>
+For the linear fitting problem, the instances directory is <code>linear_npz/</code><br>
+For the polynomial fitting problem, the instances directory is <code>polynomial_npz/</code><br>
+For the knapsack problem, the instances directory is <code>knapsack_npz/</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The name of the instance :</p>
+<blockquote>
+<p>For the network flow problem, an example of name of an intance is <code>afiro</code><br>
+For the linear fitting problem, an example of name of an intance is <code>Mat_linear3</code><br>
+For the polynomial fitting problem, an example of name of an intance is <code>Mat_polynomial3</code><br>
+For the knapsack problem, an example of name of an intance is <code>Mat_knapsack4</code></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The ID number of the instance : an arbitrary integer</p>
+</blockquote>
+</li>
+</ul>
+<p>Here are examples of complete commands:</p>
+<blockquote>
+<p><code>python3 run_one_thread.py quadratic_model cp-sat 1 30 eq linear linear_npz/ Mat_linear3 1</code><br>
+<code>python3 run_one_thread.py theorem_model chuffed 1 30 not_eq knapsack knapsack_npz/ Mat_knapsack3 1</code></p>
+</blockquote>
+<p>The results of the test are recorded as a <code>.pickle</code> file in the above directory of the dataset.</p>
+</div>
+</body>
+
+</html>

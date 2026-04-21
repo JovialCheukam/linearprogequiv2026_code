@@ -1,0 +1,129 @@
+\documentclass{book}
+\usepackage[landscape,a3paper,left=0.5cm,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\vspace{2cm}
+
+\begin{table}[]\scriptsize\centering
+\caption{Results for \texttt{Netlib}-based  {\bf SMALL } instances at different time interval; the maximum allowed time is 48 hours}
+\begin{tabular}{@{}ll rr rr rr@{}}\toprule Type of instances & Solving technique  & \multicolumn{6}{c}{Instances solved (\%, 27 total) before threshold (minutes)}\\\cmidrule(l){3-8}&  &  $\leq 1$ &  $\leq 10$ &  $\leq 30$ &  $\leq 150$ &  $ < 2880$ & Timed out\\
+\midrule
+\multirow{10}{*}{\textsc{Equiv+Permut}} & \textsc{Algo}   & 0.0 & 7.41 & 7.41 & 7.41 & 7.41 & 92.59 \\
+& \textsc{AlgoEnhanced}   & 7.41 & 11.11 & 11.11 & 14.81 & 14.81 & 85.19 \\
+& \textsc{LubyTestFullRestart}   & 3.7 & 3.7 & 11.11 & 14.81 & 22.22 & 77.78 \\
+& \textsc{LubyTestMediumRestart}   & 11.11 & 14.81 & 14.81 & 14.81 & 22.22 & 77.78 \\
+& \textsc{LubyTestSmallRestart}   & 6.67 & 10.37 & 10.37 & 10.37 & 18.89 & 81.11 \\
+& \textsc{QuadraMod} + chuffed   & 25.93 & 44.44 & 55.56 & 59.26 & 59.26 & 40.74 \\
+& \textsc{QuadraMod} + coinbc   & 7.41 & 7.41 & 7.41 & 7.41 & 11.11 & 88.89 \\
+& \textsc{QuadraMod} + cp-sat   & 25.93 & 48.15 & 59.26 & \bf 85.19 & \bf 85.19 &  \bf 14.81 \\
+& \textsc{QuadraMod} + gecode   & \bf 29.63 & \bf 51.85 & \bf 62.96 & 62.96 & 62.96 & 37.04 \\
+& \textsc{TheoMod} + chuffed   & 14.81 & 25.93 & 25.93 & 25.93 & 25.93 & 74.07 \\
+& \textsc{TheoMod} + coinbc   & 0.0 & 3.7 & 3.7 & 14.81 & 22.22 & 77.78 \\
+& \textsc{TheoMod} + cp-sat   & 25.93 & 33.33 & 33.33 & 33.33 & 33.33 & 66.67 \\
+& \textsc{TheoMod} + gecode   & \bf 29.63 & 48.15 & 48.15 & 48.15 & 48.15 & 51.85 \\
+\midrule\multirow{10}{*}{\textsc{Non-Equiv+Permut}} & \textsc{Algo}   & 81.48 & 85.19 & 85.19 & 85.19 & 85.19 & 14.81 \\
+& \textsc{AlgoEnhanced}   & 81.48 & 85.19 & 85.19 & 85.19 & 85.19 & 14.81 \\
+& \textsc{LubyTestFullRestart}   & 85.19 & 88.89 & 88.89 & 88.89 & 88.89 & 11.11 \\
+& \textsc{LubyTestMediumRestart}   & 85.19 & 88.89 & 88.89 & 88.89 & 88.89 & 11.11 \\
+& \textsc{LubyTestSmallRestart}   & 68.15 & 71.11 & 71.11 & 71.11 & 71.11 & 28.89 \\
+& \textsc{QuadraMod} + chuffed   & 25.93 & 44.44 & 59.26 & 59.26 & 59.26 & 40.74 \\
+& \textsc{QuadraMod} + coinbc   & 7.41 & 7.41 & 11.11 & 14.81 & 25.93 & 74.07 \\
+& \textsc{QuadraMod} + cp-sat   & 29.63 & 48.15 & 74.07 & 88.89 & 88.89 & 11.11 \\
+& \textsc{QuadraMod} + gecode   & 25.93 & 55.56 & 59.26 & 62.96 & 62.96 & 37.04 \\
+& \textsc{TheoMod} + chuffed   & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + coinbc   & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + cp-sat   & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + gecode   & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+\bottomrule\end{tabular} 
+
+\end{table} 
+
+
+\vspace{2cm}
+
+\begin{table}[]\scriptsize\centering
+\caption{Results for \texttt{Netlib}-based {\bf MEDIUM AND LARGE } instances at different time interval; the maximum allowed time is 48 hours}
+\begin{tabular}{@{}ll rr rr rr@{}}\toprule Type of instances & Solving technique  & \multicolumn{6}{c}{Instances solved (\%, 66 total) before threshold (minutes)}\\\cmidrule(l){3-8}&  &  $\leq 1$ &  $\leq 10$ &  $\leq 30$ &  $\leq 150$ &  $ < 2880$ & Timed out\\
+\midrule
+\multirow{10}{*}{\textsc{Equiv+Permut}} & \textsc{Algo}   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{AlgoEnhanced}   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{LubyTestFullRestart}   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{LubyTestMediumRestart}   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{LubyTestSmallRestart}   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{QuadraMod} + chuffed   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{QuadraMod} + coinbc   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{QuadraMod} + cp-sat   & \bf 0.0 & \bf 0.0 & \bf 0.0 & \bf 3.03 & \bf 3.03 &  \bf 96.97 \\
+& \textsc{QuadraMod} + gecode   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{TheoMod} + chuffed   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{TheoMod} + coinbc   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{TheoMod} + cp-sat   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+& \textsc{TheoMod} + gecode   & \bf 0 & \bf 0 & \bf 0 & 0 & 0 & 100 \\
+\midrule\multirow{10}{*}{\textsc{Non-Equiv+Permut}} & \textsc{Algo}   & 19.7 & 37.88 & 50.0 & 69.7 & 89.39 & 10.61 \\
+& \textsc{AlgoEnhanced}   & 19.7 & 37.88 & 51.52 & 69.7 & 89.39 & 10.61 \\
+& \textsc{LubyTestFullRestart}   & 19.7 & 37.88 & 51.52 & 71.21 & 90.91 & 9.09 \\
+& \textsc{LubyTestMediumRestart}   & 18.18 & 37.88 & 51.52 & 71.21 & 90.91 & 9.09 \\
+& \textsc{LubyTestSmallRestart}   & 15.3 & 30.3 & 41.52 & 56.97 & 71.67 & 28.33 \\
+& \textsc{QuadraMod} + chuffed   & 0 & 0 & 0 & 0 & 0 & 100 \\
+& \textsc{QuadraMod} + coinbc   & 0 & 0 & 0 & 0 & 0 & 100 \\
+& \textsc{QuadraMod} + cp-sat   & 0.0 & 0.0 & 0.0 & 4.55 & 4.55 & 95.45 \\
+& \textsc{QuadraMod} + gecode   & 0 & 0 & 0 & 0 & 0 & 100 \\
+& \textsc{TheoMod} + chuffed   & 80.3 & \bf 95.45 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + coinbc   & \bf 83.33 & 93.94 & 98.48 & 98.48 & 98.48 & 1.52 \\
+& \textsc{TheoMod} + cp-sat   & 78.79 & \bf 95.45 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + gecode   & 78.79 & \bf 95.45 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+\bottomrule\end{tabular} 
+
+\end{table} 
+
+
+
+
+\vspace{2cm}
+
+\begin{table}[]\scriptsize\centering
+\caption{Results for \texttt{Netlib}-based  {\bf ALL } instances at different time interval; the maximum allowed time is 48 hours}
+\begin{tabular}{@{}ll rr rr rr@{}}\toprule Type of instances & Solving technique  & \multicolumn{6}{c}{Instances solved (\%, 93 total) before threshold (minutes)}\\\cmidrule(l){3-8}&  &  $\leq 1$ &  $\leq 10$ &  $\leq 30$ &  $\leq 150$ &  $ < 2880$ & Timed out\\
+\midrule
+\multirow{10}{*}{\textsc{Equiv+Permut}} & \textsc{Algo}   & 0.0 & 2.15 & 2.15 & 2.15 & 2.15 & 97.85 \\
+& \textsc{AlgoEnhanced}   & 2.15 & 3.23 & 3.23 & 4.3 & 4.3 & 95.7 \\
+& \textsc{LubyTestFullRestart}   & 1.08 & 1.08 & 3.23 & 4.3 & 6.45 & 93.55 \\
+& \textsc{LubyTestMediumRestart}   & 3.23 & 4.3 & 4.3 & 4.3 & 6.45 & 93.55 \\
+& \textsc{LubyTestSmallRestart}   & 1.94 & 3.01 & 3.01 & 3.01 & 5.48 & 94.52 \\
+& \textsc{QuadraMod} + chuffed   & 7.53 & 12.9 & 16.13 & 17.2 & 17.2 & 82.8 \\
+& \textsc{QuadraMod} + coinbc   & 2.15 & 2.15 & 2.15 & 2.15 & 3.23 & 96.77 \\
+& \textsc{QuadraMod} + cp-sat   & 7.53 & 13.98 & 17.2 & \bf 26.88 & \bf 26.88 &  \bf 73.12 \\
+& \textsc{QuadraMod} + gecode   & \bf 8.6 & \bf 15.05 & \bf 18.28 & 18.28 & 18.28 & 81.72 \\
+& \textsc{TheoMod} + chuffed   & 4.3 & 7.53 & 7.53 & 7.53 & 7.53 & 92.47 \\
+& \textsc{TheoMod} + coinbc   & 0.0 & 1.08 & 1.08 & 4.3 & 6.45 & 93.55 \\
+& \textsc{TheoMod} + cp-sat   & 7.53 & 9.68 & 9.68 & 9.68 & 9.68 & 90.32 \\
+& \textsc{TheoMod} + gecode   & \bf 8.6 & 13.98 & 13.98 & 13.98 & 13.98 & 86.02 \\
+\midrule\multirow{10}{*}{\textsc{Non-Equiv+Permut}} & \textsc{Algo}   & 37.63 & 51.61 & 60.22 & 74.19 & 88.17 & 11.83 \\
+& \textsc{AlgoEnhanced}   & 37.63 & 51.61 & 61.29 & 74.19 & 88.17 & 11.83 \\
+& \textsc{LubyTestFullRestart}   & 38.71 & 52.69 & 62.37 & 76.34 & 90.32 & 9.68 \\
+& \textsc{LubyTestMediumRestart}   & 37.63 & 52.69 & 62.37 & 76.34 & 90.32 & 9.68 \\
+& \textsc{LubyTestSmallRestart}   & 30.65 & 42.15 & 50.11 & 61.08 & 71.51 & 28.49 \\
+& \textsc{QuadraMod} + chuffed   & 7.53 & 12.9 & 17.2 & 17.2 & 17.2 & 82.8 \\
+& \textsc{QuadraMod} + coinbc   & 2.15 & 2.15 & 3.23 & 4.3 & 7.53 & 92.47 \\
+& \textsc{QuadraMod} + cp-sat   & 8.6 & 13.98 & 21.51 & 29.03 & 29.03 & 70.97 \\
+& \textsc{QuadraMod} + gecode   & 7.53 & 16.13 & 17.2 & 18.28 & 18.28 & 81.72 \\
+& \textsc{TheoMod} + chuffed   & 86.02 & \bf 96.77 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + coinbc   & \bf 88.17 & 95.7 & 98.92 & 98.92 & 98.92 & 1.08 \\
+& \textsc{TheoMod} + cp-sat   & 84.95 & \bf 96.77 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+& \textsc{TheoMod} + gecode   & 84.95 & \bf 96.77 & \bf 100.0 & \bf 100.0 & \bf 100.0 &  \bf 0.0 \\
+\bottomrule\end{tabular} 
+
+\end{table} 
+
+
+
+\newpage
+
+\end{document}

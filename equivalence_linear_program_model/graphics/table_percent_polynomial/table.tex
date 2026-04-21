@@ -1,0 +1,47 @@
+\documentclass{book}
+\usepackage[landscape,a3paper,left=0.5cm,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\vspace{2cm}
+
+\begin{table}[]\scriptsize\centering
+\caption{Results for polynomial fitting-based instances at different time interval; the maximum allowed time is 24 hours}
+\begin{tabular}{@{}ll rr rr rr@{}}\toprule Type of instances & Solving technique  & \multicolumn{6}{c}{Instances solved (\%, 98 total) before threshold (minutes)}\\\cmidrule(l){3-8}&  &  $\leq 1$ &  $\leq 10$ &  $\leq 30$ &  $\leq 150$ &  $ < 1440$ & Timed out\\
+\midrule
+\multirow{10}{*}{\textsc{Equiv+Permut}} & \textsc{Algo}   & 3.06 & 5.1 & 6.12 & 6.12 & 6.12 & 93.88 \\
+& \textsc{AlgoEnhanced}   & \bf 90.82 & \bf 90.82 & 91.84 & 91.84 & 91.84 & 8.16 \\
+& \textsc{QuadraMod} + chuffed   & 34.69 & 62.24 & 71.43 & 86.73 & 93.88 & 6.12 \\
+& \textsc{QuadraMod} + coinbc   & 11.22 & 20.41 & 25.51 & 29.59 & 36.73 & 63.27 \\
+& \textsc{QuadraMod} + cp-sat   & 56.12 & 89.8 & 91.84 & 96.94 & 97.96 & 2.04 \\
+& \textsc{QuadraMod} + gecode   & 55.1 & \bf 90.82 & \bf 97.96 & \bf 98.98 & \bf 98.98 &  \bf 1.02 \\
+& \textsc{TheoMod} + chuffed   & 31.63 & 52.04 & 57.14 & 57.14 & 57.14 & 42.86 \\
+& \textsc{TheoMod} + coinbc   & 6.12 & 12.24 & 16.33 & 21.43 & 34.69 & 65.31 \\
+& \textsc{TheoMod} + cp-sat   & 42.86 & 57.14 & 57.14 & 57.14 & 57.14 & 42.86 \\
+& \textsc{TheoMod} + gecode   & 55.1 & 81.63 & 84.69 & 84.69 & 84.69 & 15.31 \\
+\midrule\multirow{10}{*}{\textsc{Non-Equiv+Permut}} & \textsc{Algo}   & \bf 98.98 & \bf 98.98 & \bf 98.98 & \bf 98.98 & \bf 98.98 &  \bf 1.02 \\
+& \textsc{AlgoEnhanced}   & \bf 98.98 & \bf 98.98 & \bf 98.98 & \bf 98.98 & \bf 98.98 &  \bf 1.02 \\
+& \textsc{QuadraMod} + chuffed   & 35.71 & 81.63 & 91.84 & 92.86 & 92.86 & 7.14 \\
+& \textsc{QuadraMod} + coinbc   & 14.29 & 22.45 & 27.55 & 50.0 & 70.41 & 29.59 \\
+& \textsc{QuadraMod} + cp-sat   & 58.16 & 97.96 & \bf 98.98 & \bf 98.98 & \bf 98.98 &  \bf 1.02 \\
+& \textsc{QuadraMod} + gecode   & 52.04 & 97.96 & 97.96 & 97.96 & 97.96 & 2.04 \\
+& \textsc{TheoMod} + chuffed   & 94.9 & 95.92 & 95.92 & 95.92 & 95.92 & 4.08 \\
+& \textsc{TheoMod} + coinbc   & 96.94 & 97.96 & 97.96 & 97.96 & 97.96 & 2.04 \\
+& \textsc{TheoMod} + cp-sat   & \bf 98.98 & \bf 98.98 & \bf 98.98 & \bf 98.98 & \bf 98.98 &  \bf 1.02 \\
+& \textsc{TheoMod} + gecode   & 95.92 & 96.94 & 96.94 & 96.94 & 96.94 & 3.06 \\
+\bottomrule\end{tabular} 
+
+\end{table} 
+
+
+
+\newpage
+
+\end{document}
